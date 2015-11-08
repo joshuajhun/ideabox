@@ -1,0 +1,7 @@
+<% @ideas.each do |idea| %>
+<li>
+  <%= idea.title %>
+</li>
+<%end %>
+
+<%= link_to "Go back", user_path(current_user) %>
