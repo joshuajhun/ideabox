@@ -1,9 +1,9 @@
-<%= form_for(Idea.new,url:user_ideas_path) do |f| %>
+<h1>Edit Your Ideas Here</h1>
+<%= form_for(@idea, url: user_idea_path(current_user, @idea)) do |f| %>
  <%= f.label :title %>
  <%= f.text_field :title %>
  <%= f.label :body %>
  <%= f.text_field :body %>
  <%= f.hidden_field :id %>
- <%= f.submit "Create Idea" %>
-
+ <%= f.submit "Edit Idea" %>
  <%end %>

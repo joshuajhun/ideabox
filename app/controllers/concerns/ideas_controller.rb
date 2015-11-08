@@ -1,8 +1,8 @@
 class IdeasController < ApplicationController
   def index
     @user = current_user
-    @ideas = @user.ideas.all  
-  end
+    @ideas = @user.ideas.all
+   end
 
   def new
   @idea = Idea.new
@@ -17,9 +17,21 @@ class IdeasController < ApplicationController
     end
   end
 
+  def edit
+    @idea = Idea.find(params[:id])
+  end
+
+  def update
+    @idea = Idea.find(params[:id])
+    if @idea.update(ideas_params)
+      redirect_to user_ideas_path(current_user)
+      flash[:edit] = "You have edited your idea"
+    end
+
+  end
 
   private
   def ideas_params
-    params.require(:idea).permit(:title,:body)
+    params.require(:idea).permit(:title,:body,:id)
   end
 end

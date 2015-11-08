@@ -1,6 +1,9 @@
 <% @ideas.each do |idea| %>
 <li>
-  <%= idea.title %>
+  <%= idea.title %>- <%= idea.body %>
+
+  <%= link_to "edit",edit_user_idea_path(current_user, idea)%>
+
 </li>
 <%end %>
 
