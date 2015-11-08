@@ -30,6 +30,12 @@ class IdeasController < ApplicationController
 
   end
 
+  def destroy
+    idea = Idea.find(params[:id])
+    idea.destroy
+    redirect_to user_ideas_path(current_user)
+  end
+
   private
   def ideas_params
     params.require(:idea).permit(:title,:body,:id)

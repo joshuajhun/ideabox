@@ -4,6 +4,8 @@
 
   <%= link_to "edit",edit_user_idea_path(current_user, idea)%>
 
+  <%= link_to "delete", user_idea_path(current_user,idea),method: :delete %>
+
 </li>
 <%end %>
 
