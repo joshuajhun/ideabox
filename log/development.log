@@ -2023,3 +2023,11 @@ Processing by IdeasController#index as HTML
   [1m[35mIdea Load (0.2ms)[0m  SELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1  [["user_id", 3]]
   Rendered ideas/index.html.erb within layouts/application (1.1ms)
 Completed 200 OK in 24ms (Views: 21.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2015-11-08 13:20:02 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 25ms (Views: 24.4ms | ActiveRecord: 0.2ms)
