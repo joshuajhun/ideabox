@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources:users do
-    resources:ideas
+  resources:users, only:[:new,:create,:show] do
+    resources:ideas, only:[:new,:create]
   end
   get '/login',     to: 'sessions#new'
   post '/login',    to: 'sessions#create'
