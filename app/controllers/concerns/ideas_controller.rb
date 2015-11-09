@@ -14,6 +14,9 @@ class IdeasController < ApplicationController
     if @idea.save
       redirect_to user_path(current_user)
       flash[:new_idea] = "Your Idea Has been Created"
+    else
+      flash.now[:error] = "You entry is missing some attributes."
+      render:new
     end
   end
 
@@ -26,8 +29,10 @@ class IdeasController < ApplicationController
     if @idea.update(ideas_params)
       redirect_to user_ideas_path(current_user)
       flash[:edit] = "You have edited your idea"
+    else
+      flash.now[:update] = "You are missing some key attributes"
+      render :edit
     end
-
   end
 
   def destroy

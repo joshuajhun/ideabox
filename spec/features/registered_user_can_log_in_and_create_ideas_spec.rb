@@ -39,6 +39,5 @@ RSpec.feature 'can create ideas' do
     fill_in 'Body',   with: 'sucks'
     click_button "Edit Idea"
     assert page.has_content?('You have edited your idea')
-
   end
 end
