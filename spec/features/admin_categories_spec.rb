@@ -21,4 +21,16 @@ RSpec.feature 'admins can set categories' do
     refute page.has_content?("All Categories")
     assert page.has_content?("The page you were looking for doesn't exist.")
   end
+
+  it 'allows admin the ability to create categories' do
+    admin = User.create(username: "admin",
+                        password: "password",
+                        role: 1)
+
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+    visit new_admin_category_path
+    fill_in "Title", with: 'Pokemon'
+    click_button "Create Category"
+  end
+
 end
