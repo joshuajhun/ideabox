@@ -3113,3 +3113,31 @@ FOREIGN KEY ("category_id")
   REFERENCES "categories" ("id")
 
   [1m[35m (0.1ms)[0m  ROLLBACK
+
+
+Started GET "/" for ::1 at 2015-11-09 08:52:44 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (2.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/joshuajhun/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (2.7ms)
+Completed 200 OK in 26ms (Views: 17.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2015-11-09 08:52:47 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 247ms (Views: 226.2ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-11-09 08:52:48 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-09 08:52:48 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-09 08:52:48 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-09 08:52:48 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-09 08:52:48 -0700
