@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20160201215852) do
   create_table "ideas", force: :cascade do |t|
     t.string  "name"
     t.string  "body"
-    t.integer "quality"
+    t.integer "quality", default: 0
   end
+
 end
