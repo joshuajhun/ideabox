@@ -1,0 +1,57 @@
+{
+  "MiniTest": {
+    "coverage": {
+      "/Users/joshuajhun/Turing/MOD4/projects/ideaBox2.0/app/controllers/api/v1/ideas_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        4,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/joshuajhun/Turing/MOD4/projects/ideaBox2.0/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/joshuajhun/Turing/MOD4/projects/ideaBox2.0/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/joshuajhun/Turing/MOD4/projects/ideaBox2.0/app/helpers/dashboard_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/joshuajhun/Turing/MOD4/projects/ideaBox2.0/app/models/idea.rb": [
+        1,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1454372835
+  }
+}
