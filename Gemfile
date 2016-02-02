@@ -18,9 +18,9 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'responders'
-gem 'minitest-emoji'
 gem 'simplecov'
 gem 'pry'
+gem 'materialize-sass'
 
 
 group :development, :test do

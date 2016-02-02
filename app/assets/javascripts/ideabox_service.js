@@ -3,9 +3,7 @@ function fetchIndex(){
     type: "GET",
     url: "http://socalbros:3000/api/v1/ideas",
     success: function(indexIdeas){
-      $.each(indexIdeas, function(index, ideas){
-        console.log(ideas)
-      })
+      renderIndex(indexIdeas)
     }
   })
 }
