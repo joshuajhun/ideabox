@@ -43,7 +43,7 @@ $('#index').delegate("#delete-idea", 'click', function(){
         $(idea).remove();
       },
       error: function(xhr){
-        console.log(xhr.responseText)
+        console.log(xhr.responseText) 
       }
     })
   })
