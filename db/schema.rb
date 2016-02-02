@@ -21,5 +21,4 @@ ActiveRecord::Schema.define(version: 20160201215852) do
     t.string  "body"
     t.integer "quality"
   end
-
 end

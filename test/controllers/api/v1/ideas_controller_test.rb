@@ -68,7 +68,6 @@ class Api::V1::IdeasControllerTest < ActionController::TestCase
     get :create, format: :json, name: 'testing', body: 'more testing', quality: 1
 
     assert_equal Idea.first.id , json_response['id'],
-
     json_response.each do |idea|
       assert idea['name']
       assert idea['body']
@@ -82,6 +81,5 @@ class Api::V1::IdeasControllerTest < ActionController::TestCase
 
     assert_equal json_response['name'], 'testing'
     assert_equal json_response['body'], 'change testing'
-    assert_equal json_response['quality'], 'genious'
   end
 end
