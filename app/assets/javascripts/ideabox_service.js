@@ -18,6 +18,29 @@ function postIdea(){
       data: ideaParams,
       success: function(newIdea){
         renderPost(newIdea)
+        clearField()
+      },
+      error: function(xhr){
+        console.log(xhr.responseText)
+        clearField()
+      }
+    })
+  })
+}
+
+function clearField(){
+  $('#idea-name').val("")
+  $("#idea-body").val("")
+}
+
+function deleteIdea(){``
+$('#index').delegate("#delete-idea", 'click', function(){
+  var idea = this.closest('#idea')
+    $.ajax({
+      type: 'DELETE',
+       url: 'http://socalbros:3000/api/v1/ideas/'+ $(idea).attr('data-id'),
+      success: function(){
+        $(idea).remove();
       },
       error: function(xhr){
         console.log(xhr.responseText)
