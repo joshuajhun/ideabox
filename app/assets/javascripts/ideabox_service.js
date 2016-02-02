@@ -17,7 +17,7 @@ function postIdea(){
       url: 'http://socalbros:3000/api/v1/ideas',
       data: ideaParams,
       success: function(newIdea){
-        renderIndex(newIdea)
+        renderPost(newIdea)
       },
       error: function(xhr){
         console.log(xhr.responseText)
