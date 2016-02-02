@@ -1,3 +1,4 @@
 function renderIdeas(){
   fetchIndex()
+  postIdea()
 }
