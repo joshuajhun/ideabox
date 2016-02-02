@@ -14,15 +14,15 @@ class Api::V1::IdeasController < ApplicationController
   end
 
   def update
-    respond_with Item.update(params[:id], item_params)
+    respond_with Idea.update(params[:id], idea_params)
   end
 
   def destroy
-    respond_with Item.destroy(params[:id])
+    respond_with Idea.destroy(params[:id])
   end
 
   private
   def idea_params
-    params.require(:idea).permit(:id, :title, :body, :quantity)
+    params.permit(:name, :body, :quality)
   end
 end
