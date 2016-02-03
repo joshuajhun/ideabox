@@ -83,10 +83,29 @@ function editIdeaBody(){
       type: 'PUT',
       data: data,
        url: 'http://socalbros:3000/api/v1/ideas/'+ $(ideaId).attr('data-id'),
-      success: function(something){
+      success: function(){
 
       },
     })
     }
+  })
+}
+
+function likeQuality(){
+  $('#index').delegate('.up', 'click', function(){
+    console.log('click')
+
+    var ideaId = this.closest('#idea')
+    var data = { quality: +1 }
+    $.ajax({
+      type: 'PUT',
+      data: data,
+      url: 'http://socalbros:3000/api/v1/ideas/'+ $(ideaId).attr('data-id'),
+      success: function(){
+      },
+      error: function(xhr){
+        console.log(xhr.responseText)
+      }
+    })
   })
 }
