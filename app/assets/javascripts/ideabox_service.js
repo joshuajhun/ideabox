@@ -62,7 +62,6 @@ function editIdeaName(){
       data: data,
        url: 'http://socalbros:3000/api/v1/ideas/'+ $(ideaId).attr('data-id'),
       success: function(something){
-
       },
     })
     }
@@ -83,24 +82,55 @@ function editIdeaBody(){
       data: data,
        url: 'http://socalbros:3000/api/v1/ideas/'+ $(ideaId).attr('data-id'),
       success: function(){
-
       },
     })
     }
   })
 }
 
+var ideaQuality = { swill: 0, plausible: 1, genious: 2 }
+var qualityTexts = {0: 'swill', 1: 'plausible', 2: 'genious'}
+
 function likeQuality(){
   $('#index').delegate('.up', 'click', function(){
-    console.log('click')
+    var ideaId  = this.closest('#idea')
+    var quality = ideaId.getElementsByClassName('quality')[0].textContent
+    var changeQuality = ideaId.getElementsByClassName('quality')
+    var qualityId = ideaQuality[quality]
 
-    var ideaId = this.closest('#idea')
-    var data = { quality: +1 }
+    qualityId++
+
+    debugger;
     $.ajax({
       type: 'PUT',
-      data: data,
+      data: {quality: qualityId},
       url: 'http://socalbros:3000/api/v1/ideas/'+ $(ideaId).attr('data-id'),
       success: function(){
+          $(changeQuality).text(qualityTexts[qualityId])
+      },
+      error: function(xhr){
+        console.log(xhr.responseText)
+      }
+    })
+  })
+}
+
+function dislikeQuality(){
+  $('#index').delegate('.down', 'click', function(){
+    var ideaId  = this.closest('#idea')
+    var quality = ideaId.getElementsByClassName('quality')[0].textContent
+    var changeQuality = ideaId.getElementsByClassName('quality')
+    var qualityId = ideaQuality[quality]
+
+    qualityId--
+
+    debugger;
+    $.ajax({
+      type: 'PUT',
+      data: {quality: qualityId},
+      url: 'http://socalbros:3000/api/v1/ideas/'+ $(ideaId).attr('data-id'),
+      success: function(){
+          $(changeQuality).text(qualityTexts[qualityId])
       },
       error: function(xhr){
         console.log(xhr.responseText)
