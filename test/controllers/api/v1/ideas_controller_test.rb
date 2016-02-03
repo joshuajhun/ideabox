@@ -79,6 +79,7 @@ class Api::V1::IdeasControllerTest < ActionController::TestCase
     idea_1 = create(:idea)
     get :update, format: :json, id: idea_1.id, name: 'testing', body: 'change testing', quality: 2
 
+    binding.pry
     assert_equal json_response['name'], 'testing'
     assert_equal json_response['body'], 'change testing'
   end
