@@ -3,7 +3,9 @@ function fetchIndex(){
     type: "GET",
     url: "http://socalbros:3000/api/v1/ideas",
     success: function(indexIdeas){
-      renderIndex(indexIdeas)
+      $.each(indexIdeas, function(index, idea){
+        renderIndex(idea)
+      })
     }
   })
 }
@@ -22,7 +24,6 @@ function postIdea(){
       },
       error: function(xhr){
         console.log(xhr.responseText)
-        clearField()
       }
     })
   })
@@ -33,7 +34,7 @@ function clearField(){
   $("#idea-body").val("")
 }
 
-function deleteIdea(){``
+function deleteIdea(){
 $('#index').delegate("#delete-idea", 'click', function(){
   var idea = this.closest('#idea')
     $.ajax({
@@ -43,8 +44,49 @@ $('#index').delegate("#delete-idea", 'click', function(){
         $(idea).remove();
       },
       error: function(xhr){
-        console.log(xhr.responseText) 
+        console.log(xhr.responseText)
       }
     })
+  })
+}
+
+function editIdeaName(){
+  $('#index').delegate('#ideaname', 'keydown',function(event){
+    var nl = event.which == 13
+
+    if (nl) {
+    var ideaId = this.closest('#idea')
+    var data = { name: this.textContent}
+
+    event.preventDefault();
+    $.ajax({
+      type: 'PUT',
+      data: data,
+       url: 'http://socalbros:3000/api/v1/ideas/'+ $(ideaId).attr('data-id'),
+      success: function(something){
+
+      },
+    })
+    }
+  })
+}
+function editIdeaBody(){
+  $('#index').delegate('#ideabody', 'keydown',function(event){
+    var nl = event.which == 13
+
+    if (nl) {
+    var ideaId = this.closest('#idea')
+    var data = { body: this.textContent}
+
+    event.preventDefault();
+    $.ajax({
+      type: 'PUT',
+      data: data,
+       url: 'http://socalbros:3000/api/v1/ideas/'+ $(ideaId).attr('data-id'),
+      success: function(something){
+
+      },
+    })
+    }
   })
 }
